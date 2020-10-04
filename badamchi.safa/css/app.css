@@ -1,6 +1,7 @@
 /* CSS RESET */
 
 
+
 *, *::after, *::before {
    box-sizing:border-box;
 }
@@ -88,6 +89,8 @@ a:hover {
 .form-control {
     margin: 1em 0;
 }
+
+
 .form-label {
     font-size: 0.8em;
     color: var(--color-neutral-medium);
@@ -152,16 +155,18 @@ a:hover {
    height:100%;
    overflow:hidden;
 }
+
 [data-role='main'] {
    flex: 1 1 100%;
    overflow:hidden;
    position:relative;
 }
+
 .ui-header,
 .ui-footer {
-   flex:none;
+   flex:none;/*move header and footer to top and bottom*/
    height:var(--header-height);
-   line-height:var(--header-height);
+   line-height:var(--header-height); /*footer size*/
    border-width:0;
    background-color:var(--color-white);
    box-shadow:0 0 5px rgba(0,0,0,0.15);
@@ -184,7 +189,7 @@ a:hover {
 
 
 
-
+/*ul means nav*/
 .ui-header ul,
 .ui-footer ul {
    position:relative;
@@ -193,10 +198,14 @@ a:hover {
    margin:0;
    padding:0;
 }
+
+/*desihn each element of nav bar*/
 .ui-footer li {
    flex: 1 1 auto;
    text-align:center;
 }
+
+/*for anchor to have whole things*/
 .ui-header a,
 .ui-footer a {
    display:block;

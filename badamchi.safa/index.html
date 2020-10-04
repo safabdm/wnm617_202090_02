@@ -7,14 +7,24 @@
 
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
    <link rel="stylesheet" href="css/app.css">
-
+   
    <script src="lib/js/jquery-2.2.4.min.js"></script>
    <script src="js/app.js"></script>
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
 </head>
+<!-- 
+      -Library files always come before local files in css except mobile library file
+      -Sign in page has to be much more designed and much less static
+      -Container didn't make snece in css of moblie app
+      -We should add data-role="none" for form to don't apply jqmobile css
+      -data-ajax="false" we can control by our self
+      -placeholder means label it is user friendlier to have placeholder & form label
+      -for make center form <class="display-flex flex-align-center flex-justify-center">
+-->
 <body>
+  
 
    <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-column">
@@ -43,7 +53,7 @@
 
    <section data-role="page" id="signup-page">
       <div data-role="main" class="display-flex flex-align-center flex-justify-center">
-         <form id="signup-form" data-ajax="false">
+         <form id="signup-form"  data-ajax="false">
             <div class="form-control">
                <label for="signup-username" class="form-label">Username</label>
                <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Type your username">
