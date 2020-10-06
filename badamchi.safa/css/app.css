@@ -1,7 +1,6 @@
 /* CSS RESET */
 
 
-
 *, *::after, *::before {
    box-sizing:border-box;
 }
@@ -35,6 +34,7 @@ body {
    margin:0;
    font-size:100%;
    font-family:var(--font-sans);
+   background-color: #674ea7;
 }
 
 h1,
@@ -89,11 +89,9 @@ a:hover {
 .form-control {
     margin: 1em 0;
 }
-
-
 .form-label {
     font-size: 0.8em;
-    color: var(--color-neutral-medium);
+    color: var(--color-white);
     margin: 0.5rem 0;
 }
 .ui-mobile label {
@@ -135,7 +133,7 @@ a:hover {
    font-size:0.8em;
 }
 #recent-page [data-role='main'] {
-   background-image:url(../img/map.jpg);
+   background-image:url(../img/map.png);
    background-position:center;
    background-size:cover;
 }
@@ -155,18 +153,16 @@ a:hover {
    height:100%;
    overflow:hidden;
 }
-
 [data-role='main'] {
    flex: 1 1 100%;
    overflow:hidden;
    position:relative;
 }
-
 .ui-header,
 .ui-footer {
-   flex:none;/*move header and footer to top and bottom*/
+   flex:none;
    height:var(--header-height);
-   line-height:var(--header-height); /*footer size*/
+   line-height:var(--header-height);
    border-width:0;
    background-color:var(--color-white);
    box-shadow:0 0 5px rgba(0,0,0,0.15);
@@ -189,7 +185,7 @@ a:hover {
 
 
 
-/*ul means nav*/
+
 .ui-header ul,
 .ui-footer ul {
    position:relative;
@@ -198,14 +194,10 @@ a:hover {
    margin:0;
    padding:0;
 }
-
-/*desihn each element of nav bar*/
 .ui-footer li {
    flex: 1 1 auto;
    text-align:center;
 }
-
-/*for anchor to have whole things*/
 .ui-header a,
 .ui-footer a {
    display:block;
