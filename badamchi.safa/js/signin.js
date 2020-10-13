@@ -28,8 +28,8 @@ const checkUserId = () => {
    if(sessionStorage.userId === undefined) {
       // not logged in
       if(!p.some(o=>window.location.hash===o))
-       $.mobile.navigate("#signin-page");
-           //$.mobile.navigate("#intro-page");
+      // $.mobile.navigate("#signin-page");
+       $.mobile.navigate("#intro-page");
 
    } else {
       // logged in

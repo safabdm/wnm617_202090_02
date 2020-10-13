@@ -23,7 +23,7 @@
       <div data-role="main" class="display-flex flex-column">
          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
             <div class="intro flex-stretch display-flex flex-align-center flex-justify-center intro-page">
-               <img src="img/Logo.gif" alt="Wizard" style="width:100vw; height: 100vw;"/>
+               <img src="img/Logo-w.gif" alt="Wizard" style="width:100vw; height: 100vw;"/>
             </div>
          </div>
          <div data-role="bottom" id="intro-bottom">
@@ -35,11 +35,10 @@
         
       </div>
    </section>
-
+<!-- !flex-stretch -->
    <section data-role="page" id="signin-page">
-      <div data-role="main" class="display-flex flex-column">
-         <div class="flex-stretch display-flex flex-align-center flex-justify-center">
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="icon" style="width:80vw;height:80vw;"><defs><style>.stroke-thin-center{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:4px;}</style></defs><title>thumbs-up</title><path d="M50,25V45H75.86l-2.93,2.93L70,50.86V74a1,1,0,0,1-1,1H20V55h5A20,20,0,0,0,45,35V25h5m0-10H40a5,5,0,0,0-5,5V35A10,10,0,0,1,25,45H10V85H69A11,11,0,0,0,80,74V55l2.93-2.93a10,10,0,0,0,0-14.14L80,35H60V25A10,10,0,0,0,50,15Z"></path><line class="stroke-thin-center" x1="30" y1="79" x2="30" y2="50"></line></svg>
+      <div data-role="main" class="display-flex flex-align-center flex-justify-center">
+              <!-- <img src="img/signin.png" alt="Wizard" style="width:100vw; height: 100vw;"/> 
          </div> -->
          <form id="signin-form" data-ajax="false">
             <div class="form-control">
@@ -101,7 +100,7 @@
             <div class="modal-back" data-deactivate="#recent-add-modal"></div>
             <div class="modal-drawer right">
                <div class="modal-head"> 
-                     <h1>User Settings</h1>
+                     <h2>User Settings</h2>
                </div>
                <div class="modal-body">
                      <ul class="settings-list">
@@ -109,14 +108,18 @@
                         <li><a href="#user-password-edit-page">Change Passw</a></li>
                         <li><a href="#" class="js-logout">Logout</a></li>
                      </ul>
+
                </div>
             </div>
          </div>
 
          <div class="modal" id="recent-profile-modal">
             <div class="modal-drawer bottom">
-               <div class="modal-head">Header</div>
-               <div class="modal-body">body</div>
+
+               <div class="modal-head"><h2>Header</h2></div>
+               <div class="modal-body">body<div class="floater bottom right btn-circle-open" data-toggle="#recent-profile-modal">&plus;</div></div>
+                  
+               </div>
             </div>
          </div>
       </div>

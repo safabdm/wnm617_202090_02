@@ -70,7 +70,7 @@ a:hover {
 /*intro-page*/
 
 section#intro-page {
-    background-color: var(--color-main-orange);
+    background-color: var(--color-white);
 }
 
 div#intro-bottom {
@@ -98,18 +98,16 @@ div#intro-bottom li{
    flex: 1 1 auto;
    text-align:center;
    border-width:0;
-   background-color:var(--color-main-purple);
-   color: var(--color-white);
+   background-color:var(--color-dark-purple);
+   color: var(--color-main-orange);
    font-size: 1.5em;
-  
-   
-   
+   box-shadow: 0 0 1px rgb(255 198 53); 
 }
 
-div#intro-bottom li:first-child a {
+/*div#intro-bottom li:first-child a {
    background-color:var(--color-dark-purple);
    box-shadow:0 0 8px rgba(0,0,0,1);
-}
+}*/
 
 div#intro-bottom a {
    display:block;
@@ -121,10 +119,12 @@ div#intro-bottom a {
 /*signin-page*/
 
 section#signin-page {
-   background-image:url(../img/signin.png);
-   background-position:center;
-   background-size:cover;
-   background-color: var(--color-white);
+    background-image: url(../img/signin.png);
+    background-position: bottom;
+    background-size: contain;
+    background-color: #ffffff;
+    width: 100%;
+    background-repeat: no-repeat;
 
 }
 
@@ -133,10 +133,11 @@ section#signin-page {
 
 section#signup-page {
    background-image:url(../img/signup.png);
-   /*background-position:center;*/
-   background-size:cover;
-   background-color: var(--color-white);
-   background-position: left;
+    background-position: bottom;
+    background-size: contain;
+    background-color: #ffffff;
+    width: 100%;
+    background-repeat: no-repeat;
 
 }
 
@@ -320,12 +321,14 @@ section#signup-page {
     display: inline-block;
     width: 100%;
     border-width: 0;
-    background-color: var(--color-light-orange);
     font: inherit;
     padding: 0.5em 1em;
     margin: 0;
     outline: 0;
     text-align: center;
+    background-color:var(--color-dark-purple);
+   color: var(--color-main-orange);
+   font-weight: bold;
 }
 .form-button:hover {
    text-decoration:none;
@@ -546,4 +549,19 @@ section#signup-page {
     border-radius: 2rem;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     font-size: 1.5em;
+    font-weight: bold;
+}
+.btn-circle-open {
+   /* background-color: white;*/
+    bottom: 0;    
+    line-height: 3rem;
+    width: 3rem;
+    display: inline-block;
+    text-align: center;
+    border-radius: 2rem;
+    /*box-shadow: 2px 2px 5px rgba(0,0,0,0.3);*/
+    font-size: 1.5em;
+    transform: rotate(45deg);
+    float: right;
+    font-weight: bold;
 }
