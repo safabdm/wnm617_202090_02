@@ -20,9 +20,9 @@
    --color-main-green:#025930;
    --color-main-red:#ed1c24;
 
-   --color-main-orange:#FFC636;
+   --color-main-orange:#ff9c00;
    --color-light-orange:#fdb500;
-   --color-L1-orange:#ff9c00;
+   --color-L1-orange:#FFC636;
    --color-main-purple:#791c81;
    --color-dark-purple:#621669;
 
@@ -61,6 +61,7 @@ a {
    color:inherit;
    text-decoration: none;
    font-weight:bold;
+   font-family:var(--font-sans);
 }
 a:hover {
    text-decoration:underline;
@@ -98,8 +99,8 @@ div#intro-bottom li{
    flex: 1 1 auto;
    text-align:center;
    border-width:0;
-   background-color:var(--color-dark-purple);
-   color: var(--color-main-orange);
+   background-color:var(--color-main-orange);
+   color: var(--color-white);
    font-size: 1.5em;
    box-shadow: 0 0 1px rgb(255 198 53); 
 }
@@ -119,22 +120,17 @@ div#intro-bottom a {
 /*signin-page*/
 
 section#signin-page {
-    background-image: url(../img/signin.png);
-    background-position: bottom;
-    background-size: contain;
-    background-color: #ffffff;
-    width: 100%;
-    background-repeat: no-repeat;
-
+  background-image: url(../img/Bg.png);
+  background-size: cover;
 }
 
 
 /*signup-page*/
 
 section#signup-page {
-   background-image:url(../img/signup.png);
+   background-image:url(../img/Bg.png);
     background-position: bottom;
-    background-size: contain;
+    background-size: cover;
     background-color: #ffffff;
     width: 100%;
     background-repeat: no-repeat;
@@ -311,11 +307,11 @@ section#signup-page {
     padding: 0.5em 1em;
     margin: 0;
     outline: 0;
-    border:var(--color-border);
+    border:var(--color-main-orange);
     border-style: solid;
     border-width: .1em;
     background-color: #ffffffb0;
-    color: var(--color-white);
+    color: var(--color-black);
 }
 .form-button {
     display: inline-block;
@@ -326,9 +322,9 @@ section#signup-page {
     margin: 0;
     outline: 0;
     text-align: center;
-    background-color:var(--color-dark-purple);
-   color: var(--color-main-orange);
-   font-weight: bold;
+    background-color:var(--color-main-orange);
+    color: var(--color-white);
+    font-weight: bold;
 }
 .form-button:hover {
    text-decoration:none;
@@ -337,20 +333,20 @@ section#signup-page {
 
 .form-label-sign {
     font-size: 0.8em;
-    color: var(--color-white);
+    color: var(--color-black);
     margin: 0.5rem 0;
 }
 
 #signin-form,
 #signup-form {
    padding:1em;
-   background-color: rgba(0,0,0,0.6);
+   /*background-color: rgba(0,0,0,0.6);*/
 }
 .signin-alt {
    padding:1em;
    text-align:center;
    font-size:0.8em;
-   color: var(--color-white);
+   color: var(--color-main-orange);
 }
 
 
