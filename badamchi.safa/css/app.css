@@ -534,6 +534,36 @@ section#signup-page {
 
 
 
+/* MODAL TOAST */
+.modal-toast {
+   position: absolute;
+   width: 50%;
+   background-color: var(--color-main-red);
+   box-shadow: 1px 1px 5px rgba(0,0,0,0.15);
+   border-radius: 0.2em;
+   padding: 1em;
+   text-align: center;
+   left: 50%;
+   transition: all 0.3s;
+   color: var(--color-white);
+
+}
+.modal-toast.top {
+   top:1em;
+   transform: translate(-50%,-1em);
+}
+.modal-toast.bottom {
+   bottom:1em;
+   transform: translate(-50%,1em);
+}
+.modal.active .modal-toast {
+   transform: translate(-50%,0);
+   pointer-events: initial;
+}
+
+
+
+
 
 
 /* FLOATER */

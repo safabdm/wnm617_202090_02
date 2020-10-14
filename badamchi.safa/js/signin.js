@@ -1,8 +1,25 @@
 
 
+
+const makeWarning = (target,message) => {
+   $(target).addClass("active")
+      .find(".message").html(message);
+   setTimeout(()=>{
+      $(target).removeClass("active")
+   },2000);
+}
+
+
+
 const checkSigninForm = () => {
    let user = $("#signin-username").val();
    let pass = $("#signin-password").val();
+
+   console.log(user,pass)
+   if(user=="" || pass=="") {
+      makeWarning("#warning-modal","Type a Username and Password");
+      return;
+   }
 
    if(user == 'user' && pass == 'pass') {
       // logged in
@@ -15,6 +32,7 @@ const checkSigninForm = () => {
       sessionStorage.removeItem('userId');
 
       // DO SOMETHING HERE
+      makeWarning("#warning-modal","Sign In Failed");
    }
 
    checkUserId();
@@ -28,9 +46,8 @@ const checkUserId = () => {
    if(sessionStorage.userId === undefined) {
       // not logged in
       if(!p.some(o=>window.location.hash===o))
-      // $.mobile.navigate("#signin-page");
+        // $.mobile.navigate("#signin-page");
        $.mobile.navigate("#intro-page");
-
    } else {
       // logged in
       if(p.some(o=>window.location.hash===o))
