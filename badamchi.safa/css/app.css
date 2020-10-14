@@ -101,8 +101,9 @@ div#intro-bottom li{
    border-width:0;
    background-color:var(--color-main-orange);
    color: var(--color-white);
-   font-size: 1.5em;
+ /*  font-size: 1.5em*/;
    box-shadow: 0 0 1px rgb(255 198 53); 
+   text-decoration: none;
 }
 
 /*div#intro-bottom li:first-child a {
@@ -122,51 +123,32 @@ div#intro-bottom a {
 section#signin-page {
   background-image: url(../img/Bg.png);
   background-size: cover;
+  background-position: bottom;
 }
 
 
 /*signup-page*/
 
 section#signup-page {
-   background-image:url(../img/Bg.png);
-    background-position: bottom;
-    background-size: cover;
-    background-color: #ffffff;
-    width: 100%;
-    background-repeat: no-repeat;
+  background-image:url(../img/Bg.png);
+  background-size: cover;
 
 }
 
 /* Profile */
-.user-profile-image img {
-   width:calc(100vmin - 4em);
-   height:calc(100vmin - 4em);
-   margin:2em;
-   border-radius:50%;
-   object-fit:cover;
+.profile-image img {
+    border-radius: 50%;
+    width: calc(100vw - 4em);
+    height: calc(100vw - 4em);
+    object-fit: cover;
+    margin: 2em;
 }
-.animallist-icon img {
-   width: 100px;
-   height: 100px;
-   /*vertical-align: text-top;*/
-   vertical-align: -webkit-baseline-middle;
-   object-fit: cover;
-   flex: 1 1 auto;
+.profile-body {
+   padding:1em;
 }
-.animallist-item {
-   display: flex;
-   margin: 1em;
-   background-color: #ffffff;
-   box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
-   border-radius: 1em;
-   overflow: hidden;
-}
-.user-profile-description {
-   padding:0.5em;
-   flex: 1 1 auto;
-}
-.user-profile-name {
-   font-size:1.2em;
+.profile-name {
+   font-size:1.5em;
+   margin-bottom: 1em;
 }
 
 
@@ -176,23 +158,19 @@ section#signup-page {
 /* SETTINGS */
 .settings-list {
    list-style-type:none;
-   padding:0;
    margin:0;
-}
-.settings-list a {
-   padding: 0.5em 1em;
-}
-.settings-list li:not(:first-child) {
-   border-top: 1px solid var(--color-neutral-medium);
+   padding:0;
 }
 
-.settings-list a {
+.settings-item a {
    display:block;
-   position: relative;
+   padding:0.5em 1em;
+   border-bottom:1px solid var(--color-main-orange);
+   position:relative;
 }
-.settings-list a:not([href='#'])::after {
-   position:absolute;
+.settings-item a:not([href='#'])::after {
    content:'>';
+   position:absolute;
    top:50%;
    right:1em;
    transform:translateY(-50%);
@@ -204,30 +182,29 @@ section#signup-page {
 
 
 /* ANIMAL LIST */
-.animallist-icon img {
-   width: 100px;
-   height: 100px;
-   /*vertical-align: text-top;*/
-   vertical-align: -webkit-baseline-middle;
-   object-fit: cover;
-   flex: 1 1 auto;
+.animallist-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    vertical-align:text-bottom;
 }
 .animallist-item {
-   display: flex;
-   margin: 1em;
-   background-color: #ffffff;
-   box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
-   border-radius: 1em;
-   overflow: hidden;
+    display: flex;
+    margin: 1em;
+    border-radius: 1em;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 .animallist-description {
    padding:0.5em;
-   flex: 1 1 auto;
+}
+.animallist-type,
+.animallist-breed {
+   font-size:0.8em;
 }
 .animallist-name {
    font-size:1.2em;
 }
-
 
 
 
@@ -260,7 +237,6 @@ section#signup-page {
 
 
 /* Layout Classes */
-
 
 .hidden { display:none; }
 
@@ -333,7 +309,7 @@ section#signup-page {
 
 .form-label-sign {
     font-size: 0.8em;
-    color: var(--color-black);
+    color: var(--color-font);
     margin: 0.5rem 0;
 }
 
@@ -346,7 +322,7 @@ section#signup-page {
    padding:1em;
    text-align:center;
    font-size:0.8em;
-   color: var(--color-main-orange);
+   color: var(--color-font);
 }
 
 
@@ -390,6 +366,8 @@ section#signup-page {
    left:0;
    width:100%;
    text-align:center;
+   background-color: var(--color-main-orange);
+   color:var(--color-white);
 }
 
 
@@ -414,12 +392,41 @@ section#signup-page {
 .ui-footer a {
    display:block;
    padding:0 1em;
+   color: var(--color-white);
+
+
 }
 .ui-footer a:hover,
 .ui-header a:hover {
    text-decoration:none;
 }
+.nav-icon img {
+   width:1em;
+   height:1em;
+   vertical-align: text-bottom;
+}
+.nav-icon {
+   line-height:calc(var(--header-height) * 0.6);
+   font-size:1.5em;
+}
+.nav-label {
+   line-height:calc(var(--header-height) * 0.4);
+   font-size:0.7em;
+   color: var(--color-main-orange);
+}
 
+/*header icon*/
+
+.hed-icon img {
+  width:1em;
+   height:1em;
+   vertical-align: text-bottom;
+}
+
+.hed-icon {
+   line-height:calc(var(--header-height) * 0.6);
+   font-size:1.5em;
+}
 
 
 
@@ -461,9 +468,10 @@ section#signup-page {
     padding: 1em;
 }
 .modal-head, .modal-foot {
-    background-color: var(--color-neutral-lighter);
+    background-color:var(--color-main-orange);
     padding: 0.5em 1em;
 }
+
 
 
 .modal.active .modal-back,
@@ -511,7 +519,6 @@ section#signup-page {
 }
 
 
-
 .modal-foot input {
    display:block;
    width:100%;
@@ -520,6 +527,8 @@ section#signup-page {
    font-weight:bold;
    background-color:transparent;
    outline:0;
+   color:var(--color-main-orange);
+  font-size: 1em;
 }
 
 
@@ -537,7 +546,16 @@ section#signup-page {
 
 /* CIRCLE BUTTON */
 .btn-circle {
-    background-color: white;
+    background-color: var(--color-main-orange);
+    line-height: 1rem;
+    width: 3rem;
+    display: inline-block;
+    text-align: center;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+
+}
+  /*  background-color: var(--color-main-orange);
     line-height: 3rem;
     width: 3rem;
     display: inline-block;
@@ -545,19 +563,5 @@ section#signup-page {
     border-radius: 2rem;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     font-size: 1.5em;
-    font-weight: bold;
-}
-.btn-circle-open {
-   /* background-color: white;*/
-    bottom: 0;    
-    line-height: 3rem;
-    width: 3rem;
-    display: inline-block;
-    text-align: center;
-    border-radius: 2rem;
-    /*box-shadow: 2px 2px 5px rgba(0,0,0,0.3);*/
-    font-size: 1.5em;
-    transform: rotate(45deg);
-    float: right;
-    font-weight: bold;
-}
+    font-weight: bold;*/
+
