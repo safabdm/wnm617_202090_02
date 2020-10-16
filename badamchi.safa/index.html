@@ -174,7 +174,7 @@
                      <div class="animallist-breed"><strong>Category</strong> Terror</div>
                   </div>
                </a>
-               <a href="#animal-profile-page" class="animallist-item">
+               <a href="#animal-profile-page-second" class="animallist-item">
                   <div class="animallist-image">
                      <img src="img/witches.jpg" alt="">
                   </div>
@@ -184,7 +184,7 @@
                      <div class="animallist-breed"><strong>Category</strong> Terror</div>
                   </div>
                </a>
-               <a href="#animal-profile-page" class="animallist-item">
+               <a href="#animal-profile-page-third" class="animallist-item">
                   <div class="animallist-image">
                      <img src="img/bat.jpg" alt="">
                   </div>
@@ -348,7 +348,7 @@ Category</label>
 
 
 
-<!-- need content -->
+<!-- done -->
    <section data-role="page" id="animal-profile-page">
       <header data-role="header">
          <h1>Edit Decoration</h1>
@@ -386,6 +386,97 @@ Category</label>
          </div>
       </div>
    </section>
+
+
+
+
+    <section data-role="page" id="animal-profile-page-second">
+      <header data-role="header">
+         <h1>Edit Decoration</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Cancle</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Done</a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="display-flex flex-column" style="padding:1em">  
+         <div class="profile-top" style="height:200px;flex:none;"><img src="img/witches.jpg"></div>
+         <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
+            <div class="overscroll">
+
+                 <div data-role="main" style="padding:1em">
+         <form id="animallist-edit-form" data-ajax="false">
+            <div data-role="main" class="display-flex flex-column" style="padding:1em">
+            <label for="edit-animallist-image" class="form-label">Change Location</label>
+         <div class="profile-top" style="height:200px; width:100%; background-size: cover;background-position: center;flex:none;background-image:url(img/map.png)"></div>
+            <div class="form-control">
+               <label for="edit-animallist-name" class="form-label">Change name</label>
+               <input id="edit-animallist-name" type="text" class="form-input" data-role="none" placeholder="Type your decoration name" value="Witches">
+            </div>
+            <div class="form-control">
+               <label for="edit-animallist-type" class="form-label">Change description</label>
+               <input id="edit-animallist-type" type="text" class="form-input" data-role="none" placeholder="Type your description" value="Witches">
+            </div>
+            <div class="form-control">
+               <label for="edit-animallist-breed" class="form-label">Change category</label>
+               <input id="edit-animallist-breed" type="text" class="form-input" data-role="none" placeholder="Type your category" value="Terror">
+            </div>
+         </form>
+      </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+
+
+
+
+    <section data-role="page" id="animal-profile-page-third">
+      <header data-role="header">
+         <h1>Edit Decoration</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Cancle</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Done</a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="display-flex flex-column" style="padding:1em">  
+         <div class="profile-top" style="height:200px;flex:none;"><img src="img/bat.jpg"></div>
+         <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
+            <div class="overscroll">
+
+                 <div data-role="main" style="padding:1em">
+         <form id="animallist-edit-form" data-ajax="false">
+            <div data-role="main" class="display-flex flex-column" style="padding:1em">
+            <label for="edit-animallist-image" class="form-label">Change Location</label>
+         <div class="profile-top" style="height:200px; width:100%; background-size: cover;background-position: center;flex:none;background-image:url(img/map.png)"></div>
+             <div class="form-control">
+               <label for="edit-animallist-name" class="form-label">Change name</label>
+               <input id="edit-animallist-name" type="text" class="form-input" data-role="none" placeholder="Type your decoration name" value="Terrifying Bats">
+            </div>
+            <div class="form-control">
+               <label for="edit-animallist-type" class="form-label">Change description</label>
+               <input id="edit-animallist-type" type="text" class="form-input" data-role="none" placeholder="Type your description" value="Bats">
+            </div>
+            <div class="form-control">
+               <label for="edit-animallist-breed" class="form-label">Change category</label>
+               <input id="edit-animallist-breed" type="text" class="form-input" data-role="none" placeholder="Type your category" value="Terror">
+            </div>
+         </form>
+      </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+
+
+
+
+
 
 
 
