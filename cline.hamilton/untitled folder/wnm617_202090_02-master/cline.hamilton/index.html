@@ -10,9 +10,6 @@
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
 
-   <script src="js/functions.js"></script>
-   <script src="js/pages.js"></script>
-   <script src="js/parts.js"></script>
    <script src="js/signin.js"></script>
    <script src="js/app.js"></script>
 
@@ -111,7 +108,38 @@
       </header>
       <div data-role="main">
          <div class="overscroll">
-            <div class="animallist"></div>
+            <div class="animallist">
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="https://via.placeholder.com/300/3a9/fff?text=horse" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Juicy</div>
+                     <div class="animallist-type"><strong>type</strong> Horse</div>
+                     <div class="animallist-breed"><strong>breed</strong> Andalusian</div>
+                  </div>
+               </a>
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="https://via.placeholder.com/300/93a/fff?text=dog" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Jimmy</div>
+                     <div class="animallist-type"><strong>type</strong> Dog</div>
+                     <div class="animallist-breed"><strong>breed</strong> Bulldog</div>
+                  </div>
+               </a>
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="https://via.placeholder.com/300/a39/fff?text=cat" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Corn</div>
+                     <div class="animallist-type"><strong>type</strong> Cat</div>
+                     <div class="animallist-breed"><strong>breed</strong> Ginger</div>
+                  </div>
+               </a>
+            </div>
          </div>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
@@ -155,7 +183,14 @@
 
    <section data-role="page" id="user-profile-page">
       <div data-role="main">
-         <div class="profile"></div>
+         <div class="profile-image">
+            <img src="https://via.placeholder.com/600/?text=Profile" alt="">
+         </div>
+         <div class="profile-body">
+            <div class="profile-name">Kenneth</div>
+            <div class="profile-email"><strong>Email</strong>: ken@neth.com</div>
+         </div>
+         <p><a href="#settings-page">Settings</a></p>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
       

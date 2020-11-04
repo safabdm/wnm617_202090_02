@@ -51,7 +51,7 @@ echo json_encode(
    makeQuery(
       makeConn(),
       "SELECT * FROM track_animals WHERE type = ? AND breed = ?",
-      ['cat','calico']
+      ['Cat','Persian']
    ),
    JSON_NUMERIC_CHECK
 );

@@ -31,22 +31,23 @@
 
 
 
-// ANIMAL TEMPLATE
+// ANIMAL TEMPLATE category=breed
 [
   '{{repeat(50)}}',
   {
+    
     id: '{{index(1)}}',
     user_id:'{{integer(1,10)}}',
     
-    name: '{{company()}}',
+    name:'{{company()}}',
     
     
-    type: '{{random("dog","horse","cat")}}',
+    type: '{{random("Terror","Spooky","Harvest")}}',
     breed: function(tags) {
       var breeds = {
-        "dog":["labrador","pitbull","dachsund","yorkie"],
-        "horse":["shetland","andalusian","unicorn"],
-        "cat":["calico","ginger","jellicle","tuxedo","siamese"]
+        "Terror":["Death and the Celts","Graves and Blood","","Ghosts","vampires"],
+        "Spooky":["Witches and Spiders","Bats","Spooky Eye","Black Cat and Monsters","Owl"],
+        "Harvest":["Jack-’o’-Lanterns","Candy Corn","Cattle"]
       };
       var chosen_type = breeds[this.type];
       var chosen_index = tags.integer(0,chosen_type.length-1);
@@ -74,9 +75,9 @@
     id: '{{index(1)}}',
     animal_id:'{{integer(1,50)}}',
     
-    
-    lat: '{{floating(37.795613,37.703208)}}',
-    lng: '{{floating(-122.508764,-122.381666)}}',
+
+    lat: '{{floating(37.802292,37.732809)}}',
+    lng: '{{floating(-122.527546,-122.411772)}}',
     
     
     description: '{{lorem(3, "sentences")}}',

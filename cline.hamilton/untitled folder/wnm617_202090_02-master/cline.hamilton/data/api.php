@@ -25,7 +25,7 @@ function fetchAll($r) {
 
 
 // connection, prepared statement, parameters
-function makeQuery($c,$ps,$p) {
+function makeQuery($c,$ps,$p,$makeResults=true) {
    try {
       if(count($p)) {
          $stmt = $c->prepare($ps);
@@ -34,7 +34,7 @@ function makeQuery($c,$ps,$p) {
          $stmt = $c->query($ps);
       }
 
-      $r = fetchAll($stmt);
+      $r = $makeResults ? fetchAll($stmt) : [];
 
       return [
          "result"=>$r
@@ -51,7 +51,7 @@ echo json_encode(
    makeQuery(
       makeConn(),
       "SELECT * FROM track_animals WHERE type = ? AND breed = ?",
-      ['Terror','Ghosts']
+      ['cat','calico']
    ),
    JSON_NUMERIC_CHECK
 );
