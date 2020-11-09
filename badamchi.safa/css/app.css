@@ -74,6 +74,13 @@ section#intro-page {
     background-color: var(--color-white);
 }
 
+.description {
+   padding:1em;
+   text-align:center;
+   font-size:0.8em;
+   color: var(--color-font);
+}
+
 div#intro-bottom {
    position: relative;
    overflow: hidden;
