@@ -11,6 +11,7 @@
    <script src="lib/js/jquery-2.2.4.min.js"></script>
 
    <script src="js/functions.js"></script>
+   <script src="js/maps.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
    <script src="js/signin.js"></script>
@@ -18,6 +19,8 @@
 
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtXVGeZSyk8cupRaGgz3_j6o2ObUbP9fA" defer></script>
 
 </head>
 <body>
@@ -112,6 +115,9 @@
 
    <section data-role="page" id="recent-page">
       <div data-role="main">
+         <div class="map"></div>
+
+
          <div class="floater top right">
             <div class="btn-circle" data-activate="#recent-add-modal" data-deactivate="#recent-profile-modal">&plus;</div>
          </div>
@@ -185,7 +191,7 @@
                      <div class="animallist-breed"><strong>Category</strong> Terror</div>
                   </div>
                </a>
-               <a href="#animal-profile-page-second" class="animallist-item">
+               <a href="#animal-profile-page" class="animallist-item">
                   <div class="animallist-image">
                      <img src="img/witches.jpg" alt="">
                   </div>
@@ -195,7 +201,7 @@
                      <div class="animallist-breed"><strong>Category</strong> Terror</div>
                   </div>
                </a>
-               <a href="#animal-profile-page-third" class="animallist-item">
+               <a href="#animal-profile-page" class="animallist-item">
                   <div class="animallist-image">
                      <img src="img/bat.jpg" alt="">
                   </div>
