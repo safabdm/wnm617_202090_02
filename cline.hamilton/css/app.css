@@ -135,11 +135,6 @@ a:hover {
    text-align:center;
    font-size:0.8em;
 }
-#recent-page [data-role='main'] {
-   background-image:url(../img/map.jpg);
-   background-position:center;
-   background-size:cover;
-}
 
 
 
@@ -458,4 +453,42 @@ a:hover {
 .nav-label {
    line-height:calc(var(--header-height) * 0.4);
    font-size:0.7em;
+}
+
+
+
+
+
+
+
+
+.map {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+
+
+
+
+
+
+.animal-top {
+  flex:none;
+  position:relative;
+  height:30vh;
+}
+.animal-top .profile {
+    display: flex;
+}
+.animal-top .profile-image img {
+    width: 30vw;
+    height: 30vw;
+}
+.animal-bottom {
+  flex:1 1 100%;
+  position:relative;
 }

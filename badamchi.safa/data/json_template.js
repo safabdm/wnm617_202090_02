@@ -29,7 +29,31 @@
   }
 ]
 
+// ANIMAL TEMPLATE No Breed
 
+[
+  '{{repeat(50)}}',
+  {
+    
+    id: '{{index(1)}}',
+    user_id:'{{integer(1,10)}}',
+    
+    name:'{{company()}}',
+    
+    
+    type: '{{random("Terror","Spooky","Harvest")}}',
+   
+    description: '{{lorem(3, "sentences")}}',
+    
+    img: function(tags) {
+      return 'https://via.placeholder.com/400/' +
+        tags.integer(700,999) +
+        '/fff/?text=' +
+        this.name;
+    },
+    date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
+  }
+]
 
 // ANIMAL TEMPLATE category=breed
 [

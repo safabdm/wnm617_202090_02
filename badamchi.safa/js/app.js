@@ -17,6 +17,7 @@ $(()=>{
          case 'recent-page': RecentPage(); break;
          case 'list-page': ListPage(); break;
          case 'user-profile-page': UserProfilePage(); break;
+         case 'animal-profile-page': AnimalProfilePage(); break;
       }
    })
 
@@ -40,6 +41,10 @@ $(()=>{
       checkUserId();
    })
 
+   .on("click",".js-animal-jump",function(e){
+      sessionStorage.animalId = $(this).data("id");
+      $.mobile.navigate("#animal-profile-page");
+   })
 
 
 
