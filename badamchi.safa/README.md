@@ -1,24 +1,9 @@
-
-# Safa Badamchi
+# Hamilton Cline
 
 ## Important Links
 
-- http://almondchi.com
-- http://almondchi.com/aau/wnm617/badamchi.safa/
-- http://almondchi.com/aau/wnm617/badamchi.safa/initializr
-
-## Demos
-- http://almondchi.com/aau/wnm617/badamchi.safa/demo/jquery.html
-- http://almondchi.com/aau/wnm617/badamchi.safa/initializr
-
-## M03_Explorations
-http://almondchi.com/aau/wnm617/badamchi.safa/Badamchi_m03_Explorations.pdf
-
-## Module 4
-- http://almondchi.com/aau/wnm617/badamchi.safa/index.html
-
-
-
-
-
-
+- https://hdraws.com
+- https://hdraws.com/aau/wnm617_01/cline.hamilton
+- https://hdraws.com/aau/wnm617_01/cline.hamilton/initializr
+- https://hdraws.com/aau/wnm617_01/cline.hamilton/demo/jquery.html
+- https://hdraws.com/aau/wnm617_01/cline.hamilton/demo/jqmobile.html

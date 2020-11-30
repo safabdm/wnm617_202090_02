@@ -1,37 +1,129 @@
 
-
 const makeAnimalList = templater(o=>`
-<div class="animallist-item js-animal-jump" data-id="${o.id}">
-   <div class="animallist-image">
-      <img src="${o.img}" alt="">
+   <div class="animallist-item js-animal-jump" data-id="${o.id}">
+      <div class="animallist-icon">
+         <img src="${o.img}" alt="">
+      </div>
+      <div class="animallist-description">
+         <div class="animallist-name">${o.name}</div>
+         <div class="animallist-type"><strong>Type</strong> ${o.type}</div>
+         <div class="animallist-breed"><strong>Breed</strong> ${o.breed}</div>
+      </div>
    </div>
-   <div class="animallist-description">
-      <div class="animallist-name">${o.name}</div>
-      <div class="animallist-type"><strong>type</strong> ${o.type}</div>
-      <div class="animallist-breed"><strong>breed</strong> ${o.breed}</div>
-   </div>
-</div>
-`);
-
+   `);
 
 const makeUserProfile = templater(o=>`
-<div class="profile-image">
-   <img src="${o.img}" alt="">
-</div>
-<div class="profile-body">
-   <div class="profile-name">${o.name}</div>
-   <div class="profile-email"><strong>Email</strong>: ${o.email}</div>
-</div>
-<p><a href="#settings-page">Settings</a></p>
-`);
+   <div class="user-profile-image">
+      <img src="${o.img}" alt="">
+   </div>
+   <div style="padding:1em">
+      <h2>${o.name}</h2>
+      <h3>@${o.username}</h3>
+      <h3>${o.email}</h3>
+      <div class="floater top right" style="font-size:1.25em"><a href="#user-settings-page">&equiv;</a></div>
+   </div>
+   `);
 
 const makeAnimalProfile = templater(o=>`
-<div class="profile-image">
-   <img src="${o.img}" alt="">
+<div class="animal-profile">
+   <div class="animal-profile-image">
+      <img src="${o.img}" alt="">
+   </div>
+   <h2>${o.name}</h2>
+   <div>Type ${o.type}</div>
+   <div>Breed ${o.breed}</div>
+   <div><p>${o.description}</p></div>
+   <div><a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a></div></div>
+</div>`);
+
+
+const makeAnimalPopup = o => `
+<div class="display-flex animal-popup" style="flex-wrap:wrap">
+   <div class="flex-none">
+      <div class="animal-image">
+         <img src="${o.img}" alt="">
+      </div>
+   </div>
+   <div class="flex-none animal-popup-description">
+      <h2>${o.name}</h2>
+      <div>${o.type}</div>
+      <div>${o.breed}</div>
+   </div>
+   <div class="form-button js-animal-jump" data-id="${o.animal_id}" style="width:100%">Visit</div>
 </div>
-<div class="profile-body">
-   <div class="profile-name">${o.name}</div>
-   <div class="profile-type"><strong>Type</strong>: ${o.type}</div>
-   <div class="profile-breed"><strong>Breed</strong>: ${o.breed}</div>
+`;
+
+
+
+
+
+const FormControl = ({namespace,name,displayname,type,placeholder,value}) => {
+   return `<div class="form-control">
+   <label for="${namespace}-${name}" class="form-label">${displayname}</label>
+   <input id="${namespace}-${name}" type="${type}" class="form-input" data-role="none" placeholder="${placeholder}" value="${value}">
+   </div>`;
+}
+
+const makeUserEditForm = o => `
+${FormControl({
+   namespace:'user-edit',
+   name:'username',
+   displayname:'Username',
+   type:'text',
+   placeholder:'Type your user name',
+   value:o.username
+})}
+${FormControl({
+   namespace:'user-edit',
+   name:'name',
+   displayname:'Name',
+   type:'text',
+   placeholder:'Type your full name',
+   value:o.name
+})}
+${FormControl({
+   namespace:'user-edit',
+   name:'email',
+   displayname:'Email',
+   type:'text',
+   placeholder:'Type your email',
+   value:o.email
+})}
+`;
+
+
+
+
+const makeAnimalEditForm = o => `
+<!--<div class="user-profile-image">
+   <img src="${o.img}">
+</div>-->
+${FormControl({
+   namespace:'animal-edit',
+   name:'name',
+   displayname:'Name',
+   type:'text',
+   placeholder:'Type the animal name',
+   value:o.name
+})}
+${FormControl({
+   namespace:'animal-edit',
+   name:'type',
+   displayname:'Type',
+   type:'text',
+   placeholder:'Type the type',
+   value:o.type
+})}
+${FormControl({
+   namespace:'animal-edit',
+   name:'breed',
+   displayname:'Breed',
+   type:'text',
+   placeholder:'Type the breed',
+   value:o.breed
+})}
+<div class="form-control">
+   <label for="animal-edit-description" class="form-label">Description</label>
+   <textarea id="animal-edit-description" class="form-input" data-role="none" placeholder="Type a description" style="height:6em">${o.description}</textarea>
 </div>
-`);
+`;

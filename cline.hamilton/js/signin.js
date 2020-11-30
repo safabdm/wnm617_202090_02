@@ -1,43 +1,40 @@
-
-
 const makeWarning = (target,message) => {
    $(target).addClass("active")
-      .find(".message").html(message);
+      .find('.message').html(message);
    setTimeout(()=>{
-      $(target).removeClass("active")
+      $(target).removeClass("active");
    },2000);
 }
 
-
-
-const checkSigninForm = async () => {
+const checkSigninForm = async() => {
    let user = $("#signin-username").val();
    let pass = $("#signin-password").val();
 
-   console.log(user,pass)
-
-   if(user=="" || pass=="") {
-      makeWarning("#warning-modal","Type a Username and Password");
+   if(user=='' || pass=='') {
+      makeWarning("#signin-warning","Please fill in Username and Password");
       return;
    }
+
+   console.log(user,pass)
 
    let found_user = await query({
       type:'check_signin',
       params:[user,pass]
    });
 
-   if(found_user.result.length) {
+   if(found_user.result.length > 0) {
       // logged in
-      console.log('success');
+      console.log("success");
       sessionStorage.userId = found_user.result[0].id;
+
       $("#signin-form")[0].reset();
    } else {
       // not logged in
-      console.log('failure');
+      console.log("failure");
       sessionStorage.removeItem('userId');
 
       // DO SOMETHING HERE
-      makeWarning("#warning-modal","Sign In Failed");
+      makeWarning("#signin-warning","Login Failed")
    }
 
    checkUserId();
@@ -47,14 +44,20 @@ const checkSigninForm = async () => {
 const checkUserId = () => {
    let p = ['#signin-page','#signup-page',''];
 
-
    if(sessionStorage.userId === undefined) {
       // not logged in
       if(!p.some(o=>window.location.hash===o))
          $.mobile.navigate("#signin-page");
    } else {
       // logged in
-      if(p.some(o=>window.location.hash===o))
-         $.mobile.navigate("#recent-page");
+      if(p.some(o=>window.location.hash===o)) {
+         query({type:'animals_by_user_id',params:[sessionStorage.userId]})
+         .then(d=>{
+            if(d.result.length) $.mobile.navigate("#recent-page");
+            else $.mobile.navigate("#list-page");
+         })
+      }
    }
 }
+
+
