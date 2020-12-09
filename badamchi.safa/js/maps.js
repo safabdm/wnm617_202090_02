@@ -32,6 +32,7 @@ const makeMarkers = (map_el,map_locs,setbounds=true) => {
       let pos = {
          position:o,
          map:map
+         
       }
       if(o.icon) pos.icon = {
             url: o.icon,

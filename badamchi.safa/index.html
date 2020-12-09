@@ -182,7 +182,7 @@
          <div class="overscroll">
             <div class="animallist"></div>
          </div>
-         <div class="floater right bottom"><a href="#animal-add-page"><img id="filter-b" src="img/icon/plus.svg" alt="" style="width: 3rem; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);font-size: 1.5em; border-radius: 50%; background-color: var(--color-white);"></a></div>
+         <div class="floater right bottom"><a href="#animal-add-page"><img id="filter-b" src="img/icon/addAni.svg" alt="" style="width: 3rem; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);font-size: 1.5em; border-radius: 50%; background-color: var(--color-white);"></a></div>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
       
@@ -235,6 +235,7 @@
          </ul>
       </footer> -->
    </section>
+
 
    <section data-role="page" id="user-settings-page">
       <header data-role="header">
@@ -302,13 +303,14 @@
       <header data-role="header">
          <h1>Upload Photo</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back">Cancel</a></li>
             <li class="flex-stretch"></li>
             <li><a href="#" class="js-user-upload">Save</a></li>
          </ul>
       </header>
-      <div data-role="main">
+      <div data-role="main" style="padding:1em">
          <form id="user-upload-form" data-ajax="false">
+            <img src="https://via.placeholder.com/300/?text=Upload" alt="">
             <input type="hidden" id="user-upload-image">
             <label class="image-uploader full">
                <input type="file" data-role="none" id="user-upload-input">
@@ -317,14 +319,6 @@
          <label for="user-upload-input" class="form-button">Choose Image</label>
       </div>
    </section>
-
-
-
-
-
-
-
-
 
 
 
@@ -349,7 +343,7 @@
          <div class="profile-top">
             <div class="map"></div>
             <div class="floater right bottom">
-               <a href="#location-add-page" class="btn-circle">&plus;</a>
+               <a href="#location-add-page" style="background-color: var(--color-white); display: inline-block;text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); font-size: 1.5em; border-radius: 2em;" ><img src="img/icon/addAni.svg" class="icon" alt=""></a>
             </div>
          </div>
          <div class="profile-bottom">
@@ -358,11 +352,13 @@
       </div>
    </section>
 
+
+
    <section data-role="page" id="animal-edit-page">
       <header data-role="header">
          <h1>Animal Info</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back"><img src="img/icon/arrow-left.svg" alt="" class="icon"></a></li>
             <li class="flex-stretch"></li>
             <li><a href="#" class="js-animal-edit">Save</a></li>
          </ul>
@@ -379,15 +375,18 @@
       <header data-role="header">
          <h1>Animal Info</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back">Cancel</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-animal-add">Save</a></li>
+            <li><a href="#" class="js-animal-add">Done</a></li>
          </ul>
       </header>
       <div data-role="main">
          <div class="overscroll">
             <form id="animal-add-form" data-ajax="false" style="padding:1em">
-            
+               <div class="form-control animal-profile-image">
+                  <img src="https://via.placeholder.com/400/?text=Upload" alt="">
+               </div>
+
                <input type="hidden" id="animal-add-destination" value="#list-page">
             
                <div class="form-control">
@@ -426,9 +425,9 @@
       <header data-role="header">
          <h1>Choose Location</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back">Cancel</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#location-description-page">Next</a></li>
+            <li><a href="#location-description-page">Done</a></li>
          </ul>
       </header>
       <div data-role="main">
