@@ -7,7 +7,7 @@ const makeAnimalList = templater(o=>`
       <div class="animallist-description">
          <div class="animallist-name">${o.name}</div>
          <div class="animallist-type"><strong>Type</strong> ${o.type}</div>
-         <div class="animallist-breed"><strong>Breed</strong> ${o.breed}</div>
+         <div class="animallist-category"><strong>Category: </strong> ${o.category}</div>
       </div>
    </div>
    `);
@@ -15,6 +15,7 @@ const makeAnimalList = templater(o=>`
 const makeUserProfile = templater(o=>`
    <div class="user-profile-image">
       <img src="${o.img}" alt="">
+      <a href="#user-upload-page" class="floater bottom right"><img class="icon" src="img/icon/edit.svg" alt=""></a></a>
    </div>
    <div style="padding:1em">
       <h2>${o.name}</h2>
@@ -30,8 +31,8 @@ const makeAnimalProfile = templater(o=>`
       <img src="${o.img}" alt="">
    </div>
    <h2>${o.name}</h2>
-   <div>Type ${o.type}</div>
-   <div>Breed ${o.breed}</div>
+   <div>Type: ${o.type}</div>
+   <div>Category: ${o.category}</div>
    <div><p>${o.description}</p></div>
    <div><a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a></div></div>
 </div>`);
@@ -47,7 +48,7 @@ const makeAnimalPopup = o => `
    <div class="flex-none animal-popup-description">
       <h2>${o.name}</h2>
       <div>${o.type}</div>
-      <div>${o.breed}</div>
+      <div>${o.category}</div>
    </div>
    <div class="form-button js-animal-jump" data-id="${o.animal_id}" style="width:100%">Visit</div>
 </div>
@@ -116,14 +117,54 @@ ${FormControl({
 })}
 ${FormControl({
    namespace:'animal-edit',
-   name:'breed',
-   displayname:'Breed',
+   name:'category',
+   displayname:'Category',
    type:'text',
-   placeholder:'Type the breed',
-   value:o.breed
+   placeholder:'Type the category',
+   value:o.category
 })}
 <div class="form-control">
    <label for="animal-edit-description" class="form-label">Description</label>
    <textarea id="animal-edit-description" class="form-input" data-role="none" placeholder="Type a description" style="height:6em">${o.description}</textarea>
 </div>
 `;
+
+
+
+
+
+const drawAnimalList = (a,empty_phrase="No animals yet, you should add some.") => {
+   $("#list-page .animallist").html(
+      a.length ? makeAnimalList(a) : empty_phrase
+   )
+}
+
+
+
+const capitalize = s => s[0].toUpperCase()+s.substr(1);
+
+const filterList = (animals,type) => {
+   let a = [...(new Set(animals.map(o=>o[type])))];
+   return templater(o=>`<div class="filter" data-field="${type}" data-value="${o}">${capitalize(o)}</div>`)(a);
+}
+
+const makeFilterList = (animals) => {
+   return `
+   <div class="filter" data-field="type" data-value="">All</div>
+   |
+   ${filterList(animals,'type')}
+   |
+   ${filterList(animals,'category')}
+   `
+}
+
+
+
+
+
+const makeUploaderImage = ({namespace,folder,name}) => {
+   console.log(namespace,folder,name)
+   $(`#${namespace}-image`).val(folder+name);
+   $(`#${namespace}-page .image-uploader`)
+      .css({'background-image':`url(${folder+name}`})
+}

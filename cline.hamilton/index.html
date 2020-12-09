@@ -2,8 +2,17 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
+
+
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="mobile-web-app-capable" content="yes">
+
+   <link rel="apple-touch-icon" href="./icone_logo.png">
+   <link rel="icon" href="./icone_logo.png">
+
+
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Animal Tracker</title>
+   <title>Decoration Tracker</title>
 
 
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
@@ -21,7 +30,7 @@
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIIYHY44bwoNFqmcEHtYYA7LroVyiKqnI" defer></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIIYHY44bwoNFqmcEHtYYA7LroVyiKqnI" defer></script>
 
 </head>
 <body>
@@ -30,7 +39,7 @@
    <section data-role="page" id="signin-page">
       <div data-role="main">
          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
-            <img src="img/icon/thumbs.svg" style="width:90vw;height:90vw;" class="icon" alt="">
+            <img src="./gif_logo.gif" style="width:100vw;height:100vw;" class="icon" alt="">
          </div>
          <form id="signin-form" data-ajax="false" style="padding:1em">
             <div class="form-control">
@@ -127,15 +136,15 @@
             </div>
          </div>
       </div>
-      <footer data-role="footer">
+      <footer data-role="footer" data-template="#footer-template"></footer>
+      
+      <!-- <footer data-role="footer">
          <ul>
             <li><a href="#recent-page">Recent</a></li>
             <li><a href="#list-page">List</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
-      </footer>
-
-
+      </footer> -->
    </section>
 
 
@@ -155,25 +164,34 @@
 
 
    <section data-role="page" id="list-page">
+      <header data-role="header" style="padding:0 1em">
+         <form class="hotdog" id="list-search-form" data-ajax="false">
+            <input type="search" id="list-search-input" data-role="none" placeholder="Search">
+         </form>
+      </header>
       <header data-role="header">
-         <h1>Animals</h1>
-         <ul>
-            <li class="flex-stretch"></li>
-            <li><a href="#animal-add-page">&plus;</a></li>
-         </ul>
+         <div class="filter-list">
+            <!-- <div class="filter" data-field="type" data-value="">All</div>
+            <div class="filter" data-field="type" data-value="cat">Cat</div>
+            <div class="filter" data-field="type" data-value="dog">Dog</div>
+            <div class="filter" data-field="type" data-value="horse">Horse</div> -->
+         </div>
       </header>
       <div data-role="main">
          <div class="overscroll">
             <div class="animallist"></div>
          </div>
+         <div class="floater right bottom"><a class="btn-circle" href="#animal-add-page">&plus;</a></div>
       </div>
-      <footer data-role="footer">
+      <footer data-role="footer" data-template="#footer-template"></footer>
+      
+      <!-- <footer data-role="footer">
          <ul>
             <li><a href="#recent-page">Recent</a></li>
             <li><a href="#list-page">List</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
-      </footer>
+      </footer> -->
    </section>
 
 
@@ -206,13 +224,15 @@
       <div data-role="main">
          <div class="profile"></div>
       </div>
-      <footer data-role="footer">
+     <footer data-role="footer" data-template="#footer-template"></footer>
+      
+      <!-- <footer data-role="footer">
          <ul>
             <li><a href="#recent-page">Recent</a></li>
             <li><a href="#list-page">List</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
-      </footer>
+      </footer> -->
    </section>
 
    <section data-role="page" id="user-settings-page">
@@ -274,6 +294,26 @@
                </div>
             </form>
          </div>
+      </div>
+   </section>
+
+   <section data-role="page" id="user-upload-page">
+      <header data-role="header">
+         <h1>Upload Photo</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-user-upload">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="user-upload-form" data-ajax="false">
+            <input type="hidden" id="user-upload-image">
+            <label class="image-uploader full">
+               <input type="file" data-role="none" id="user-upload-input">
+            </label>
+         </form>
+         <label for="user-upload-input" class="form-button">Choose Image</label>
       </div>
    </section>
 
@@ -358,8 +398,8 @@
                   <input id="animal-add-type" type="text" class="form-input" data-role="none">
                </div>
                <div class="form-control">
-                  <label for="animal-add-breed" class="form-label">Breed</label>
-                  <input id="animal-add-breed" type="text" class="form-input" data-role="none">
+                  <label for="animal-add-category" class="form-label">Category</label>
+                  <input id="animal-add-category" type="text" class="form-input" data-role="none">
                </div>
                <div class="form-control">
                   <label for="animal-add-description" class="form-label">Description</label>
@@ -422,6 +462,24 @@
          </div>
       </div>
    </section>
+
+
+   <script type="text/template" id="footer-template">
+               <ul>
+                  <li><a href="#recent-page">
+                     <div class="nav-icon"><img src="img/icon/map.svg" alt=""></div>
+                     <div class="nav-label">Recent</div>
+                  </a></li>
+                  <li><a href="#list-page">
+                     <div class="nav-icon"><img src="img/icon/list.svg" alt=""></div>
+                     <div class="nav-label">List</div>
+                  </a></li>
+                  <li><a href="#user-profile-page">
+                     <div class="nav-icon"><img src="img/icon/profile.svg" alt=""></div>
+                     <div class="nav-label">Profile</div>
+                  </a></li>
+            </ul>
+   </script>
 
 
 

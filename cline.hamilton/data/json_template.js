@@ -7,78 +7,83 @@
 [
   '{{repeat(10)}}',
   {
-    id:'{{index(1)}}',
+    id: '{{index(1)}}',
     name: '{{firstName()}} {{surname()}}',
-    username: function() {
-      return 'user'+this.id;
+    username: function(){
+      return 'user' + this.id;
     },
-    email: function() {
-      return this.username+'@gmail.com';
+    email: function(){
+      return this.username + '@gmail.com';
     },
     password: 'md5(pass)',
-    img:function(tags) {
-      return 'https://via.placeholder.com/400/'+
-        tags.integer(700,999) + '/fff/?text=' + this.username;
+    
+    
+    
+    img: function(tags) {
+      return 'https://via.placeholder.com/400/' +
+        tags.integer(700,999) +
+        '/fff/?text=' +
+        this.username;
     },
     date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
   }
 ]
 
 
-// ANIMAL TEMPLATE
+// ANIMAL TEMPLATE category=breed
 [
   '{{repeat(50)}}',
   {
-    id:'{{index(1)}}',
-    user_id: '{{integer(1,10)}}',
     
-    name: '{{company()}}',
+    id: '{{index(1)}}',
+    user_id:'{{integer(1,10)}}',
     
-    // most of you will use this
-    type: '{{random("dog","horse","cat")}}',
-    // most of you won't need this
-    breed: function(tags){
-      var breeds = {
-        dog:["labrador","pitbull","dachsund"],
-        horse:["shetland","andalusian","unicorn"],
-        cat:["calico","ginger","tuxedo","siamese"]
+    name:'{{company()}}',
+    
+    
+    type: '{{random("terror","spooky","harvest")}}',
+    category: function(tags) {
+      var categories = {
+        terror:["Death and the Celts","Graves and Blood","","Ghosts","vampires"],
+        spooky:["Witches and Spiders","Bats","Spooky Eye","Black Cat and Monsters","Owl"],
+        harvest:["Jack-’o’-Lanterns","Candy Corn","Cattle"]
       };
-      var chosen_type = breeds[this.type];
+      var chosen_type = categories[this.type];
       var chosen_index = tags.integer(0,chosen_type.length-1);
       return chosen_type[chosen_index];
     },
     
-    description: '{{lorem(3,"sentences")}}',
+    description: '{{lorem(3, "sentences")}}',
     
-    img:function(tags) {
-      return 'https://via.placeholder.com/400/'+
-        tags.integer(700,999) + '/fff/?text=' + this.name;
+    img: function(tags) {
+      return 'https://via.placeholder.com/400/' +
+        tags.integer(700,999) +
+        '/fff/?text=' +
+        this.name;
     },
     date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
   }
 ]
 
 
-// LOCATIONS TEMPLATE
+
+// LOCATION TEMPLATE
 [
   '{{repeat(250)}}',
   {
-    id:'{{index(1)}}',
-    animal_id: '{{integer(1,50)}}',
+    id: '{{index(1)}}',
+    animal_id:'{{integer(1,50)}}',
     
-    lat:'{{floating(37.794021, 37.698960)}}',
-    lng:'{{floating(-122.510762, -122.386346)}}',
+
+    lat: '{{floating(37.802292,37.732809)}}',
+    lng: '{{floating(-122.527546,-122.411772)}}',
     
-    description: '{{lorem(3,"sentences")}}',
     
-    /*
-    photos: [
-      '{{repeat(1,5)}}',
-      'https://via.placeholder.com/400/'
-     ],
-    */
+    description: '{{lorem(3, "sentences")}}',
+    
     photo: 'https://via.placeholder.com/400/',
     icon: 'https://via.placeholder.com/100/?text=ICON',
+    
     date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
   }
 ]

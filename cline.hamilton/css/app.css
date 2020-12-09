@@ -5,7 +5,7 @@
 }
 
 :root {
-   --font-sans:Helvetica, Arial, sans-serif;
+   --font-sans:'Poppins', Helvetica, Arial, sans-serif;
    --font-serif:Georgia, serif;
 
    --color-neutral-lighter:#f0f0f1;
@@ -22,6 +22,12 @@
    --color-black:#000;
 
    --header-height:3rem;
+
+   /*Mine color*/
+   --color-main-orange:#ff9c00;
+   --color-main-purple:#791c81;
+   --color-dark-purple:#621669;
+
 }
 
 body {
@@ -130,6 +136,27 @@ a {
    cursor:pointer;
 }
 
+.hotdog {
+   width: 100%;
+   display: inline-flex;
+   background-color: var(--color-neutral-light);
+   padding: 0.5em 1em;
+   border-radius: 2em;
+   line-height:1;
+}
+[data-role="header"]>.hotdog {
+   padding:0.7em 1em;
+}
+.hotdog>input {
+   flex:1;
+   border-width:0;
+   border-radius:0;
+   background-color:transparent;
+   font:inherit;
+   color:inherit;
+   outline:0;
+   padding:0;
+}
 
 
 
@@ -178,6 +205,29 @@ a {
 
 
 /* NAV */
+/*.ui-footer ul,
+.ui-header ul {
+   position:relative;
+   z-index:2;
+   margin:0;
+   padding:0;
+   display:flex;
+   list-style-type:none;
+}
+.ui-footer li {
+   flex: 1 1 auto;
+   text-align:center;
+}
+.ui-footer a,
+.ui-header a {
+   padding:0 1em;
+   display:block;
+}
+.ui-footer a:hover,
+.ui-header a:hover {
+   text-decoration:none;
+}*/
+
 .ui-footer ul,
 .ui-header ul {
    position:relative;
@@ -199,6 +249,19 @@ a {
 .ui-footer a:hover,
 .ui-header a:hover {
    text-decoration:none;
+}
+.nav-icon img {
+   width:1em;
+   height:1em;
+   vertical-align: text-bottom;
+}
+.nav-icon {
+   line-height:calc(var(--header-height) * 0.6);
+   font-size:1.5em;
+}
+.nav-label {
+   line-height:calc(var(--header-height) * 0.4);
+   font-size:0.7em;
 }
 
 
@@ -414,7 +477,10 @@ a {
 
 
 /* Profile */
-.user-profile-image img {
+.user-profile-image {
+   position:relative;
+}
+.user-profile-image>img {
    width:calc(100vmin - 4em);
    height:calc(100vmin - 4em);
    margin:2em;
@@ -525,4 +591,41 @@ a {
 }
 .animal-popup-description {
   padding:1em;
+}
+
+
+
+
+
+
+
+
+
+.filter-list {
+    display: flex;
+    overflow: auto;
+}
+.filter {
+    padding: 0 0.5em;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+
+
+
+
+
+.image-uploader input {
+   display:none;
+}
+.image-uploader.full {
+   position:absolute;
+   top:0;
+   left:0;
+   width:100%;
+   height:100%;
+   background-position:center;
+   background-size:contain;
+   background-repeat:no-repeat;
 }

@@ -2,8 +2,17 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
+
+
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="mobile-web-app-capable" content="yes">
+
+   <link rel="apple-touch-icon" href="./icone_logo.png">
+   <link rel="icon" href="./icone_logo.png">
+
+
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Boo!</title>
+   <title>Pink Paws</title>
 
 
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
@@ -21,7 +30,7 @@
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIIYHY44bwoNFqmcEHtYYA7LroVyiKqnI" defer></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIIYHY44bwoNFqmcEHtYYA7LroVyiKqnI" defer></script>
 
 </head>
 <body>
@@ -29,8 +38,8 @@
 
    <section data-role="page" id="signin-page">
       <div data-role="main">
-         <div class="flex-stretch display-flex flex-align-center flex-justify-center">
-            <img src="img/New Boo.gif" alt="Boo" style="width:100vw; height: 100vw;"/>
+         <div class="flex-stretch display-flex flex-align-center flex-justify-center" style="background-color: var(--color-main-bg);    box-shadow: 0px 2px 9px 3px rgb(47 70 65 / 53%);border-radius: 0em 0em 2em 2em;">
+            <img src="./logo.svg" style="width:100vw;height:100vw;" class="icon" alt="">
          </div>
          <form id="signin-form" data-ajax="false" style="padding:1em">
             <div class="form-control">
@@ -44,12 +53,8 @@
             <div class="form-control">
                <input type="submit" data-role="none" class="form-button" value="Sign In">
             </div>
-            <!-- <div class="form-control" style="text-align:center;font-size:0.8em">
+            <div class="form-control" style="text-align:center;font-size:0.8em">
                Don't have an account? <a href="#signup-page">Sign Up</a>!
-            </div> -->
-            <div class="form-control signin-alt">
-               Don't have an account?
-               <a href="#signup-page" style="color:var(--color-main-orange);">Sign Up</a>
             </div>
          </form>
       </div>
@@ -62,7 +67,8 @@
    </section>
 
    <section data-role="page" id="signup-page">
-      <div data-role="main">
+      <div data-role="main" style="background-color: var(--color-main-bg);">
+         <div  style="background-color: var(--color-white);    box-shadow: 0px 2px 9px 3px rgb(47 70 65 / 53%);border-radius:2em; padding:1.5em;">
          <form id="signup-form" data-ajax="false" style="padding:1em">
             <div class="form-control">
                <label for="signup-username" class="form-label">Username</label>
@@ -83,15 +89,13 @@
             <div class="form-control">
                <button type="submit" class="form-button" data-role="none">Sign Up</button>
             </div>
-            <div class="form-control signin-alt">
-               Already have an account?
-               <a href="#signin-page" style="color:var(--color-main-orange);">Sign In</a>
+            <div class="form-control" style="text-align:center;font-size:0.8em">
+               Already have an account? <a href="#signin-page">Sign In</a>!
             </div>
          </form>
       </div>
+      </div>
    </section>
-
-
 
 
 
@@ -126,9 +130,7 @@
                   <div class="btn-circle">&times;</div>
                </div>
                <div class="modal-head">Title</div>
-               <div class="modal-body">
-                  Links and such
-               </div>
+               <div class="modal-body"></div>
             </div>
          </div>
       </div>
@@ -141,8 +143,6 @@
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
       </footer> -->
-
-
    </section>
 
 
@@ -162,17 +162,27 @@
 
 
    <section data-role="page" id="list-page">
-      <header data-role="header">
-         <h1>Animals</h1>
-         <ul>
-            <li class="flex-stretch"></li>
-            <li><a href="#animal-add-page">&plus;</a></li>
-         </ul>
+      <header data-role="header" style="padding:0 1em">
+         <form class="hotdog" id="list-search-form" data-ajax="false">
+            <input type="search" id="list-search-input" data-role="none" placeholder="Search">
+            <img id="filter-b" src="img/icon/search.svg" alt="" style="height: 1.8em; margin-top: 0;margin-left: 0;">
+         </form>
+         
       </header>
+      <header data-role="header">
+         <div class="filter-list">
+            <!-- <div class="filter" data-field="type" data-value="">All</div>
+            <div class="filter" data-field="type" data-value="cat">Cat</div>
+            <div class="filter" data-field="type" data-value="dog">Dog</div>
+            <div class="filter" data-field="type" data-value="horse">Horse</div> -->
+         </div>
+      </header>
+      
       <div data-role="main">
          <div class="overscroll">
             <div class="animallist"></div>
          </div>
+         <div class="floater right bottom"><a href="#animal-add-page"><img id="filter-b" src="img/icon/plus.svg" alt="" style="width: 3rem; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);font-size: 1.5em; border-radius: 50%; background-color: var(--color-white);"></a></div>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
       
@@ -215,7 +225,7 @@
       <div data-role="main">
          <div class="profile"></div>
       </div>
-      <footer data-role="footer" data-template="#footer-template"></footer>
+     <footer data-role="footer" data-template="#footer-template"></footer>
       
       <!-- <footer data-role="footer">
          <ul>
@@ -285,6 +295,26 @@
                </div>
             </form>
          </div>
+      </div>
+   </section>
+
+   <section data-role="page" id="user-upload-page">
+      <header data-role="header">
+         <h1>Upload Photo</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-user-upload">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="user-upload-form" data-ajax="false">
+            <input type="hidden" id="user-upload-image">
+            <label class="image-uploader full">
+               <input type="file" data-role="none" id="user-upload-input">
+            </label>
+         </form>
+         <label for="user-upload-input" class="form-button">Choose Image</label>
       </div>
    </section>
 
@@ -435,13 +465,12 @@
    </section>
 
 
-
-
    <script type="text/template" id="footer-template">
-               <ul>
+              
+         <ul style="padding:.1em; align:center">
                   <li><a href="#recent-page">
                      <div class="nav-icon"><img src="img/icon/map.svg" alt=""></div>
-                     <div class="nav-label">Recent</div>
+                     <div class="nav-label">Map</div>
                   </a></li>
                   <li><a href="#list-page">
                      <div class="nav-icon"><img src="img/icon/list.svg" alt=""></div>
@@ -451,7 +480,6 @@
                      <div class="nav-icon"><img src="img/icon/profile.svg" alt=""></div>
                      <div class="nav-label">Profile</div>
                   </a></li>
-            </ul>
    </script>
 
 

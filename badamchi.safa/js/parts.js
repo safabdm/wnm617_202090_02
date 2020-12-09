@@ -15,6 +15,7 @@ const makeAnimalList = templater(o=>`
 const makeUserProfile = templater(o=>`
    <div class="user-profile-image">
       <img src="${o.img}" alt="">
+      <a href="#user-upload-page" class="floater bottom right"><img class="icon" src="img/icon/edit.svg" alt=""></a></a>
    </div>
    <div style="padding:1em">
       <h2>${o.name}</h2>
@@ -127,3 +128,39 @@ ${FormControl({
    <textarea id="animal-edit-description" class="form-input" data-role="none" placeholder="Type a description" style="height:6em">${o.description}</textarea>
 </div>
 `;
+
+
+
+
+
+const drawAnimalList = (a,empty_phrase="No animals yet, you should add some.") => {
+   $("#list-page .animallist").html(
+      a.length ? makeAnimalList(a) : empty_phrase
+   )
+}
+
+
+
+const capitalize = s => s[0].toUpperCase()+s.substr(1);
+
+const filterList = (animals,type) => {
+   let a = [...(new Set(animals.map(o=>o[type])))];
+   return templater(o=>`<div class="filter" data-field="${type}" data-value="${o}">${capitalize(o)}</div>`)(a);
+}
+
+const makeFilterList = (animals) => {
+   return `
+   <div class="filter" data-field="type" data-value="">All</div>
+   |
+   ${filterList(animals,'type')}
+   `
+}
+
+
+
+const makeUploaderImage = ({namespace,folder,name}) => {
+   console.log(namespace,folder,name)
+   $(`#${namespace}-image`).val(folder+name);
+   $(`#${namespace}-page .image-uploader`)
+      .css({'background-image':`url(${folder+name}`})
+}

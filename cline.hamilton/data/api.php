@@ -119,7 +119,7 @@ function makeStatement($data) {
       case "insert_animal":
          $r = makeQuery($c,"INSERT INTO
             `track_animals`
-            (`user_id`,`name`,`type`,`breed`,`description`,`img`,`date_create`)
+            (`user_id`,`name`,`type`,`category`,`description`,`img`,`date_create`)
             VALUES
             (?, ?, ?, ?, ?, 'https://via.placeholder.com/400?text=ANIMAL', NOW())
             ",$p);
@@ -158,7 +158,7 @@ function makeStatement($data) {
             SET
             `name` = ?,
             `type` = ?,
-            `breed` = ?,
+            `category` = ?,
             `description` = ?
             WHERE `id` = ?
             ",$p,false);
