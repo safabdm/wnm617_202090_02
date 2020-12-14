@@ -35,14 +35,14 @@
     name: '{{company()}}',
     
     // most of you will use this
-    type: '{{random("Dog","Cat","Rabbit","Hamster")}}',
+    type: '{{random("dog","cat","rabbit","hamster")}}',
     // most of you won't need this
     breed: function(tags){
       var breeds = {
-        Dog:["Labrador Retriever","Bulldog","Golden Retriever","Pomeranian","Pug","Chaw chaw"],
-        Cat:["Persians","Bengals","British Shorthairs","Exotic Shorthairs","Birmans","Scottish Folds"],
-        Rabbit:["American","Belgian Hare","Dutch","Tan"],
-        Hamster:["Syrian","Roborovski","Chinese"]
+        dog:["Labrador","Dachsund","Chaw chaw","Pomeranian","Bulldog","Beagle","Golden Retriever","Pug"],
+        cat:["shetland","andalusian","unicorn"],
+        rabbit:["American","Belgian Hare","Dutch","English Lop","Tan"],
+        hamster:["Syrian","Roborovski","Chinese"]
       };
       var chosen_type = breeds[this.type];
       var chosen_index = tags.integer(0,chosen_type.length-1);

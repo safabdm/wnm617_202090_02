@@ -5,43 +5,55 @@
 }
 
 :root {
-   --font-sans:Helvetica, Arial, sans-serif;
-   --font-serif:Georgia, serif;
+   --font-sans: 'Roboto', sans-serif;
+   --font-serif: 'Suez One', serif;
+
 
    --color-neutral-lighter:#f0f0f1;
    --color-neutral-light:#e0e0e5;
    --color-neutral-mediumer:#b4b4be;
    --color-neutral-medium:#83838f;
-   --color-neutral-dark:#30304e;
+   --color-neutral-dark:#424242;
 
-    --color-main-light: #d5fffe;
-    --color-main-medium: #1acfc8;
-    --color-main-dark: #1e5452;
-
-    --color-main-bg: #46665f;
-    --color-main-pink:#ea4c88;
-    --color-main-border:#c32361;
+   --color-main-pink:#F27987;
+   --color-main-light: #d5fffe;
+   --color-main-medium: #1acfc8;
+   --color-main-dark: #1e5452;
 
    --color-white:#fff;
    --color-black:#000;
 
-   --header-height:5.188rem;
+   --header-height:4rem;
+}
+
+.header-logo {
+  height: 2.5em;
+  width: auto;
+  display: block;
+  margin-top: .1em;
+  margin-left: .1em;
 }
 
 body {
    margin:0;
    font-size:100%;
    font-family:var(--font-sans);
+   color: var(--color-neutral-dark);
 }
 
 h1,
 h2,
-h3,
+h3
+{
+   color:var(--color-neutral-dark);
+   font-family:var(--font-serif);
+}
+
 h4,
 h5,
 h6 {
    color:var(--color-neutral-dark);
-   font-family:var(--font-serif);
+   font-family:var(--font-sans);
 }
 
 
@@ -106,7 +118,7 @@ a {
 .ui-mobile label.form-label {
     margin: 0 1em 0.5em;
     font-size: 0.8em;
-    color: var(--color-black);
+    color: var(--color-neutral-mediumer);
 }
 .form-input {
     width: 100%;
@@ -114,21 +126,23 @@ a {
     border-width: 0;
     background-color: var(--color-neutral-lighter);
     padding: 0.5em 1em;
-    border-radius: 0.2em;
+    border-radius: 0.4em ;
     font: inherit;
     outline: 0;
+    box-shadow: inset 0px 0px 10px 0px rgb(212 203 203);
 }
 .form-button {
     width: 100%;
     display: inline-block;
     border-width: 0;
-    background-color: var(--color-main-pink);
-    color: var(--color-white);
+    background-color: var(--color-neutral-light);
     padding: 0.5em 1em;
-    border-radius: 0.2em;
-    font: inherit;
+    border-radius: 0.4em;
+    font: icon;
     outline: 0;
     text-align:center;
+    background-color: var(--color-main-pink);
+    box-shadow: 0px 0px 5px 0px rgb(216 206 206);
 }
 .form-button:hover {
    text-decoration:none;
@@ -138,10 +152,12 @@ a {
 .hotdog {
    width: 100%;
    display: inline-flex;
-   background-color: var(--color-neutral-light);
+   background-color: var(--color-neutral-lighter);
    padding: 0.5em 1em;
-   border-radius: 2em;
+   border-radius: 0.4em;
    line-height:1;
+   box-shadow: inset 0px 0px 5px 0px rgb(99 94 94)
+    
 }
 [data-role="header"]>.hotdog {
    padding:0.7em 1em;
@@ -226,7 +242,6 @@ a {
 .ui-header a:hover {
    text-decoration:none;
 }*/
-
 .ui-footer ul,
 .ui-header ul {
    position:relative;
@@ -271,16 +286,31 @@ a {
 
 
 
+
 /* PAGE SPECIFICS */
+
+.sign-top{
+    background-color: var(--color-main-pink);
+    box-shadow: 0px 0px 9px 0px rgb(187 92 103);
+    border-radius: 0em 0em 2em 2em;
+}
+
+.sign-button{
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 5px 0px rgb(216 206 206);
+}
 #signin-page [data-role='main'] {
    display:flex;
    flex-direction:column;
 }
+
+
 #signup-page [data-role='main'] {
    display:flex;
    align-items:center;
    justify-content:center;
 }
+
 
 
 
@@ -315,8 +345,7 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 80%;
-/*        width: 100%;*/
+    width: 100%;
     height: 100%;
     opacity: 0;
     transition: all 0.3s;
@@ -346,7 +375,7 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%,calc(-50% + 3em));
-    width: 80vw;
+    width: 80vmin;
     transition:all 0.3s;
 }
 .modal.active .modal-popup {
@@ -366,7 +395,6 @@ a {
   font-size:1em;
   margin:0;
 }
-
 
 
 
@@ -406,19 +434,9 @@ a {
    flex:1 1 100%;
 }
 
-.modal-foot input {
-   display:block;
-   width:100%;
-   text-align:right;
-   border-width:0;
-   font-weight:bold;
-   background-color:transparent;
-   outline:0;
-}
 
 
 
-/* MODAL TOAST */
 .modal-toast {
    position: absolute;
    width: 50%;
@@ -459,24 +477,15 @@ a {
 
 /* CIRCLE */
 .btn-circle {
-  /* display:inline-block;
+  display:inline-block;
    background-color:var(--color-white);
-   width:3rem;
+   /*width:3rem;
    height:3rem;
-   line-height:3rem;
+   line-height:3rem;*/
    text-align:center;
    font-size:1.5em;
    border-radius:2em;
-   box-shadow:2px 2px 5px rgba(0,0,0,0.15);*/
-
-    background-color: white;
-    line-height: 3rem;
-    width: 3rem;
-    display: inline-block;
-    text-align: center;
-    border-radius: 2rem;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-    font-size: 1.5em;
+   box-shadow:2px 2px 5px rgba(0,0,0,0.15);
 }
 
 
@@ -502,6 +511,9 @@ a {
 /* Profile */
 .user-profile-image {
    position:relative;
+   background-color: var(--color-main-pink);
+   border-radius: 0% 0% 50% 50%;
+   box-shadow: 0px 0px 9px 0px rgb(187 92 103);
 }
 .user-profile-image>img {
    width:calc(100vmin - 4em);
@@ -511,6 +523,30 @@ a {
 
    object-fit:cover;
 }
+
+
+/*.user-profile-image {
+    background-color: var(--color-main-pink);
+    border-radius: 0% 0% 50% 50%;
+    box-shadow: 0px 0px 9px 0px rgb(187 92 103);
+
+}*/
+
+.profile-edit{
+    /*background-color: var(--color-main-pink);*/
+    border-radius: 50% 50%;/*
+    box-shadow: 0px 0px 9px 0px rgb(187 92 103);*/
+}
+
+.profile-edit>img {
+   width:calc(100vmin - 4em);
+   height:calc(100vmin - 4em);
+   margin:2em;
+   border-radius:50%;
+
+   object-fit:cover;
+}
+
 
 
 
@@ -554,11 +590,13 @@ a {
 }
 .animallist-item {
    display: flex;
-   margin: 1em;
+   margin: 1em;/*
    background-color: #ffffff;
-   box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
+   box-shadow: 2px 2px 10px rgba(0,0,0,0.15);*/
    border-radius: 1em;
    overflow: hidden;
+   background-color: var(--color-white);
+   box-shadow: 0px 0px 5px 0px rgb(216 206 206);
 }
 .animallist-description {
    padding:0.5em;
@@ -605,9 +643,6 @@ a {
 #recent-drawer .modal-drawer {
   margin:1em;
   width:calc(100% - 2em);
-  transition: all 0.3s;
-  top:50%;
-  left:50%;
 }
 .animal-popup img {
   width:80px;
@@ -630,6 +665,7 @@ a {
 .filter-list {
     display: flex;
     overflow: auto;
+    color:var(--color-white);
 }
 .filter {
     padding: 0 0.5em;
@@ -641,62 +677,60 @@ a {
 
 
 
-/*
+
 .image-uploader input {
    display:none;
 }
+
 .image-uploader.full {
+
    position:absolute;
    top:0;
    left:0;
    width:100%;
-   height:100%;
+   height:80%;
    background-position:center;
    background-size:contain;
    background-repeat:no-repeat;
-}*/
+   border-radius:0.5em;
+   border:2px solid white;
+   box-shadow:0 1px 3px rgba(0,0,0,0.2);
+   background-color: var(--color-neutral-lighter);
+}
 
+.image-uploader.full::before{
 
-.image-uploader.full {
+   color:var(--color-neutral-mediumer);
+   font-weight: 900;
+   content: "+";
    position:absolute;
-   top:0;
-   left:0;
-   width:100%;
-   height:100%;
-
-   background-size:contain;
-   background-repeat:no-repeat;
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);
+   vertical-align:middle;
+   font-size:20em;
+   background-color: var(--color-neutral-lighter);
 }
-.ui-mobile label.image-uploader {
-   margin:0;
-}
-.image-uploader input {
-   display:none;
-}
-
 .image-uploader.thumbnail {
-    width: 5em;
-    height: 5em;
-    border-radius: 0.5em;
-    background-position: center;
-    background-size: cover;
-    position:relative;
+   width:5em;
+   height:5em;
+   border-radius:0.5em;
+   background-position:center;
+   background-size:cover;
+   position:relative;
+   border:2px solid white;
+   box-shadow:0 1px 3px rgba(0,0,0,0.2);
 }
-.image-uploader.thumbnail:not(.picked){
-  border:2px solid var(--color-neutral-light);
+.image-uploader.thumbnail::before {
+   color:var(--color-neutral-mediumer);
+   content: '+';
+   position:absolute;
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);
+   vertical-align:middle;
+   font-size:3em;
 }
-/* This will add the floating plus symbol to the imagepicker */
-.image-uploader.thumbnail:before {
-  color:black;
-  content:'+';
-  position:absolute;
-  font-size:3em;
-  vertical-align:middle;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-}
-/* This will hide the plus symbol behind the background of the imagepicker if the class "picked" is added to the element */
-.image-uploader.thumbnail.picked:before {
-  z-index:-1;
+.image-uploader.thumbnail.picked::before {
+   content:'';
 }
