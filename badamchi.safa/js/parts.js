@@ -146,7 +146,7 @@ ${FormControl({
 
 
 
-const drawAnimalList = (a,empty_phrase="No animals yet, you should add some.") => {
+const drawAnimalList = (a,empty_phrase="No animals added yet, you can add some in pink paws. ") => {
    $("#list-page .animallist").html(
       a.length ? makeAnimalList(a) : empty_phrase
    )
