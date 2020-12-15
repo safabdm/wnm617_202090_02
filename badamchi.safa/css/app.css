@@ -152,7 +152,7 @@ a {
 .hotdog {
    width: 100%;
    display: inline-flex;
-   background-color: var(--color-neutral-lighter);
+   background-color: var(--color-white);
    padding: 0.5em 1em;
    border-radius: 0.4em;
    line-height:1;
@@ -193,6 +193,7 @@ a {
 }
 .ui-header,
 .ui-footer {
+   padding-top: 0.3em;
    flex: none;
    height:var(--header-height);
    line-height:var(--header-height);
