@@ -11,7 +11,7 @@ const checkSigninForm = async() => {
    let pass = $("#signin-password").val();
 
    if(user=='' || pass=='') {
-      makeWarning("#signin-warning","Please fill in Username and Password");
+      makeWarning("#signin-warning","Please enter your username and password");
       return;
    }
 

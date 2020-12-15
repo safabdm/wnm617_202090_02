@@ -32,11 +32,6 @@ const RecentPage = async() => {
    map_el.data("markers").forEach((o,i)=>{
       o.addListener("click",function(){
 
-         /*
-         // SIMPLE EXAMPLE
-         sessionStorage.animalId = valid_animals[i].animal_id;
-         $.mobile.navigate("#animal-profile-page")
-         */
 
          
          //INFOWINDOW EXAMPLE
@@ -44,14 +39,7 @@ const RecentPage = async() => {
             .open(map_el.data("map"),o);
          map_el.data("infoWindow")
             .setContent(makeAnimalPopup(valid_animals[i]));
-         
-
-         /*
-         // ACTIVE EXAMPLE
-         $("#recent-drawer").addClass("active");
-         $("#recent-drawer .modal-body")
-            .html(makeAnimalPopup(valid_animals[i]));
-         */   
+            
       })
    });
 }
@@ -125,23 +113,6 @@ const AnimalEditPage = async() => {
 }
 
 
-
-// const LocationAddPage = async() => {
-//    let map_el = await makeMap("#location-add-page .map");
-//    makeMarkers(map_el,[]);
-
-//    let map = map_el.data('map');
-
-//    map.addListener("click",function(e){
-//       console.log(e)
-//       let posFromClick = {lat:e.latLng.lat(),lng:e.latLng.lng()};
-//       let posFromCenter = {lat:map.getCenter().lat(),lng:map.getCenter().lng()};
-//       console.log(posFromClick,posFromCenter)
-//       $("#location-add-lat").val(posFromClick.lat)
-//       $("#location-add-lng").val(posFromClick.lng)
-
-//       makeMarkers(map_el,[posFromClick],false);
-//    });
 
 
 

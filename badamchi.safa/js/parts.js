@@ -6,8 +6,8 @@ const makeAnimalList = templater(o=>`
       </div>
       <div class="animallist-description">
          <div class="animallist-name">${o.name}</div>
-         <div class="animallist-type"><strong>Type</strong> ${o.type}</div>
-         <div class="animallist-breed"><strong>Breed</strong> ${o.breed}</div>
+         <div class="animallist-type"><strong>Type:</strong> ${o.type}</div>
+         <div class="animallist-breed"><strong>Breed:</strong> ${o.breed}</div>
       </div>
    </div>
    `);
@@ -16,6 +16,7 @@ const makeUserProfile = templater(o=>`
    <div class="user-profile-image">
       <img src="${o.img}" alt="">
    </div>
+   
    <div style="padding:1em">
       <h2>${o.name}</h2>
       <h4><strong>Username:</strong>${o.username}</h4>
@@ -33,8 +34,8 @@ const makeAnimalProfile = templater(o=>`
    </div>
 
    <h2>${o.name}</h2>
-   <div>Type ${o.type}</div>
-   <div>Breed ${o.breed}</div>
+   <div>Type: ${o.type}</div>
+   <div>Breed: ${o.breed}</div>
    <div><p>${o.description}</p></div>
    `);
 //<div><a href="#" class="js-animal-delete" data-id="${o.id}"><img src="img/icon/trash-animal.svg" alt="" class="icon" style="width:40px;"></a></div></div>
@@ -72,9 +73,9 @@ const makeUserEditForm = o => `
 
 <div class="profile-edit">
    <img src="${o.img}" alt="">
-   <div class="floater left top">
-      <a href="#user-upload-page"><img class="icon" src="img/icon/photo.svg" style="width: 40px;"></a>
-   </div>
+   <div>
+      <div class="floater top left btn-circle-pink" style="font-size:1.25em;"><a href="#user-upload-page"><img src="img/icon/photo.svg"  style="width: 40px;"></a></div>
+</div>
 </div>
 
 ${FormControl({
