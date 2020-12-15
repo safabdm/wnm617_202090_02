@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 15, 2020 at 01:24 PM
+-- Generation Time: Dec 15, 2020 at 02:12 PM
 -- Server version: 5.6.49-cll-lve
 -- PHP Version: 7.3.6
 
@@ -94,10 +94,10 @@ INSERT INTO `track_animals` (`id`, `user_id`, `name`, `type`, `breed`, `descript
 (48, 10, 'Cubix', 'rabbit', 'English Lop', 'Proident aute deserunt est duis laboris reprehenderit sint veniam ad sunt aute do laborum et. Dolore qui nisi exercitation cupidatat nostrud amet consectetur reprehenderit ipsum. Ad irure culpa magna velit veniam.', 'https://via.placeholder.com/400/962/fff/?text=Cubix', '2020-10-14 12:08:21'),
 (46, 1, 'Oronoko', 'cat', 'unicorn', 'Cillum consectetur eiusmod cillum ad consequat tempor aliqua do tempor proident. Excepteur ipsum reprehenderit nisi ut proident. Ipsum nostrud anim et veniam eu incididunt laboris occaecat incididunt sit dolore exercitation voluptate.', 'https://via.placeholder.com/400/712/fff/?text=Oronoko', '2020-07-21 05:13:16'),
 (47, 4, 'Cinaster', 'cat', 'andalusian', 'Occaecat non in proident aliqua. Dolor eu laborum qui cillum. Dolor quis pariatur aliquip occaecat ad laborum labore consectetur id velit elit laborum et irure.', 'https://via.placeholder.com/400/707/fff/?text=Cinaster', '2020-06-08 06:44:30'),
-(99, 11, 'Zizzle', 'Hamester', 'Syrian', 'Solitary pets', 'img/user0/hamster1.jpg', '2020-12-15 11:05:02'),
-(100, 11, 'Chan', 'Rabbit', 'Tan', 'energetic', 'img/user0/rabbit1.jpg', '2020-12-15 11:09:48'),
-(98, 11, 'Desert', 'Hamester', 'Chinese', 'Pretty Friendly', 'img/user0/hamster2.jpg', '2020-12-15 11:00:54'),
-(96, 11, 'Simba', 'Cat', 'Persians', 'Cute, Friendly', 'img/user0/persian.png', '2020-12-15 04:39:14'),
+(99, 11, 'Zizzle', 'Hamester', 'Syrian', 'Solitary pets', 'uploads/1608066651.9983_hamster1.jpg', '2020-12-15 11:05:02'),
+(100, 11, 'Chan', 'Rabbit', 'Tan', 'energetic', 'uploads/1608066667.1979_rabbit1.jpg', '2020-12-15 11:09:48'),
+(98, 11, 'Desert', 'Hamester', 'Chinese', 'Pretty Friendly', 'uploads/1608066592.5494_hamster2.jpg', '2020-12-15 11:00:54'),
+(96, 11, 'Simba', 'Cat', 'Persians', 'Cute, Friendly', 'uploads/1608066679.9298_persian.png', '2020-12-15 04:39:14'),
 (97, 11, 'Cooper', 'dog', 'Golden Retriever', 'Intelligent, friendly, Very Active', 'img/user0/dog5.jpg', '2020-12-15 10:44:13');
 
 --
